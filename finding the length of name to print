@@ -1,0 +1,14 @@
+def persons(names):
+    for i in names:
+        if len(i) >= 5:
+            print(len(i), i)
+        else:
+            print("name below the value")
+
+
+j = int(input("How many names"))
+names = []
+for i in range(j):
+    m = input("Enter the names")
+    names.append(m)
+persons(names)
