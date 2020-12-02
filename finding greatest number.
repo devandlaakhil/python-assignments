@@ -1,0 +1,5 @@
+x = int(input("enter the value"))
+y = int(input("enter the value"))
+z = int(input("enter the value"))
+a = x,y,z
+print(max(a))
