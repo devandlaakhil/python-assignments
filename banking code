@@ -1,0 +1,75 @@
+
+print("\t\t\t*****BankwithUs*****")
+print("\t\t ------Main Menu------")
+
+bank_data = {}
+user_data = {}
+
+while True:
+    ch = int(input("""
+    1. New Customer : 
+    2. Existing customer : 
+    3. Exit : 
+    
+    Enter choice: """))
+
+    if ch == 1:
+        name = input("Enter name: ")
+        city = input("Enter city: ")
+        age = int(input("enter age: "))
+        acc_type = input(("Enter account tuype :  "))
+        amt = int(input("Enter initial ammount: "))
+        acc_no = int(input("account number: "))
+
+        user_data ["name"] = name
+        user_data ["city"] = city
+        user_data ["age"] = age
+        user_data ["acc_type"] = acc_type
+        user_data ["amount"] = amt
+
+        bank_data ["account_number"] = acc_no
+        bank_data["detail"] = user_data
+
+        print("\n------account created succssfully------ ")
+
+    elif ch == 2:
+        acc_no = int(input("Enter account number: "))
+
+        if acc_no == bank_data["account_number"]:
+            print("\n-----Account Exists-----")
+
+            while True:
+                print("\t\t-----User Portal-----")
+
+
+                u_ch = int(input("\n1. Check Balanc e\n2.withdraw\n3.Deposit\n4.Back to main menu\n\nEnter choice"))
+
+                if u_ch == 1 :
+                    print("Your available balance: ",bank_data["detail"]["amount"])
+
+                elif u_ch == 2 :
+                    W_amt = int(input("Enter the amount: "))
+                    bank_data["detail"]["amount"] = bank_data["detail"]["amount"] - W_amt
+                    print("Amount Withdrawn" )
+
+                elif u_ch == 3 :
+                    d_amt = int(input("enter the amount to deposit: "))
+                    bank_data["detail"]["amount"] = bank_data["detail"]["amount"] + d_amt
+                    print("\n-----Amount deposited-----")
+
+                elif u_ch == 4 :
+                      break
+            else:
+                print("\nInvalid input")
+
+        else:
+            print("\nAccount does not exist")
+
+    elif ch == 3:
+        break
+
+    else:
+        print("\nInvalid input")
+
+
+
